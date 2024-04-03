@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv  
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -36,7 +38,7 @@ CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'zep315.pythonanywhere.com',
+    'artsecond.pythonanywhere.com',
 ]
 
 
@@ -53,6 +55,9 @@ INSTALLED_APPS = [
 	'users.apps.UsersConfig',
 	'crispy_forms',
     'crispy_bootstrap4',
+    'users',
+    'website',
+    
 ]
 
 INSTALLED_APPS += [
@@ -106,10 +111,10 @@ WSGI_APPLICATION = 'cook_recipe.wsgi.application'
 DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.mysql',
-             'NAME': 'Zep315$default',
-             'USER': 'Zep315',
+             'NAME': 'artsecond$default',
+             'USER': 'artsecond',
              'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-             'HOST': 'Zep315.mysql.pythonanywhere-services.com',
+             'HOST': 'artsecond.mysql.pythonanywhere-services.com',
              'OPTIONS': {
                  'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
                  'charset': 'utf8mb4',
